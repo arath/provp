@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace nothinbutdotnetprep.collections
@@ -19,7 +20,8 @@ namespace nothinbutdotnetprep.collections
 
     public void add(Movie movie)
     {
-      throw new NotImplementedException();
+      movies.Add(movie);
+      //throw new NotImplementedException();
     }
 
     public IEnumerable<Movie> sort_all_movies_by_title_descending
@@ -29,12 +31,39 @@ namespace nothinbutdotnetprep.collections
 
     public IEnumerable<Movie> all_movies_published_by_pixar()
     {
-      throw new NotImplementedException();
-    }
+      IList<Movie> pixmovies;
+     pixmovies = new List<Movie>();
 
+      //this.pixar_movies New movies
+     foreach (Movie x in movies)
+     {
+       if (x.production_studio.Equals(ProductionStudio.Pixar))
+       {
+         pixmovies.Add(x);
+       }
+     }
+      return pixmovies;
+       //throw new NotImplementedException();
+      }
+ 
     public IEnumerable<Movie> all_movies_published_by_pixar_or_disney()
     {
-      throw new NotImplementedException();
+      {
+        IList<Movie> pixmovies;
+        pixmovies = new List<Movie>();
+
+        //this.pixar_movies New movies
+        foreach (Movie x in movies)
+        {
+          if (x.production_studio == ProductionStudio.Pixar | x.production_studio == ProductionStudio.Disney)
+          {
+            pixmovies.Add(x);
+          }
+        }
+        return pixmovies;
+        //throw new NotImplementedException();
+      }
+
     }
 
     public IEnumerable<Movie> sort_all_movies_by_title_ascending
@@ -49,27 +78,109 @@ namespace nothinbutdotnetprep.collections
 
     public IEnumerable<Movie> all_movies_not_published_by_pixar()
     {
-      throw new NotImplementedException();
+      {
+        IList<Movie> pixmovies;
+        pixmovies = new List<Movie>();
+
+        //this.pixar_movies New movies
+        foreach (Movie x in movies)
+        {
+          if (x.production_studio != ProductionStudio.Pixar)
+          {
+            pixmovies.Add(x);
+          }
+        }
+        return pixmovies;
+        //throw new NotImplementedException();
+      }
     }
 
     public IEnumerable<Movie> all_movies_published_after(int year)
     {
-      throw new NotImplementedException();
+      {
+        {
+          IList<Movie> pixmovies;
+          pixmovies = new List<Movie>();
+
+          //this.pixar_movies New movies
+          foreach (Movie x in movies)
+          {
+            if (x.date_published.Year > year)
+            {
+              pixmovies.Add(x);
+            }
+          }
+          return pixmovies;
+          //throw new NotImplementedException();
+        }
+      }
     }
 
     public IEnumerable<Movie> all_movies_published_between_years(int startingYear, int endingYear)
     {
-      throw new NotImplementedException();
+      {
+        {
+          {
+            IList<Movie> pixmovies;
+            pixmovies = new List<Movie>();
+
+            //this.pixar_movies New movies
+            foreach (Movie x in movies)
+            {
+              if (x.date_published.Year >= startingYear | x.date_published.Year <= endingYear)
+              {
+                pixmovies.Add(x);
+              }
+            }
+            return pixmovies;
+            //throw new NotImplementedException();
+          }
+        }
+      }
     }
 
     public IEnumerable<Movie> all_kid_movies()
     {
-      throw new NotImplementedException();
+      {
+        {
+          IList<Movie> pixmovies;
+          pixmovies = new List<Movie>();
+
+          //this.pixar_movies New movies
+          foreach (Movie x in movies)
+          {
+            if (x.genre == Genre.kids )
+            {
+              pixmovies.Add(x);
+            }
+          }
+          return pixmovies;
+          //throw new NotImplementedException();
+        }
+
+      }
     }
 
     public IEnumerable<Movie> all_action_movies()
     {
-      throw new NotImplementedException();
+      {
+        {
+          IList<Movie> pixmovies;
+          pixmovies = new List<Movie>();
+
+          //this.pixar_movies New movies
+          foreach (Movie x in movies)
+          {
+            if (x.genre == Genre.action)
+            {
+              pixmovies.Add(x);
+            }
+          }
+          return pixmovies;
+          //throw new NotImplementedException();
+        }
+
+      }
     }
 
     public IEnumerable<Movie> sort_all_movies_by_date_published_descending()
