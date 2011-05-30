@@ -81,10 +81,7 @@ namespace nothinbutdotnetprep.specs
       Because b = () =>
         number_of_movies = sut.all_movies().Count();
 
-      It should_return_the_number_of_all_movies_in_the_library = () =>
-      {
-        number_of_movies.ShouldEqual(2);
-      };
+      It should_return_the_number_of_all_movies_in_the_library = () => { number_of_movies.ShouldEqual(2); };
     }
 
     [Subject(typeof(MovieLibrary))]
@@ -318,10 +315,7 @@ namespace nothinbutdotnetprep.specs
       protected static Movie the_ring;
       protected static Movie theres_something_about_mary;
 
-      Establish c = () =>
-      {
-        populate_with_default_movie_set(movie_collection);
-      };
+      Establish c = () => { populate_with_default_movie_set(movie_collection); };
 
       static void populate_with_default_movie_set(IList<Movie> movieList)
       {
