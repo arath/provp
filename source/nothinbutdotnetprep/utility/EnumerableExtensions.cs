@@ -15,7 +15,7 @@ namespace nothinbutdotnetprep.utility
       return items.all_items_matching(criteria.matches);
     }
 
-    static IEnumerable<ItemToMatch> all_items_matching<ItemToMatch>(this IEnumerable<ItemToMatch> items,
+    public static IEnumerable<ItemToMatch> all_items_matching<ItemToMatch>(this IEnumerable<ItemToMatch> items,
                                                        Condition<ItemToMatch> condition)
     {
       foreach (var item_to_match in items)

@@ -65,12 +65,17 @@
     <Compile Include="collections\ProductionStudio.cs" />
     <Compile Include="collections\ReadOnlySetOf.cs" />
     <Compile Include="utility\AndCriteria.cs" />
+    <Compile Include="utility\AnonymousMatch.cs" />
     <Compile Include="utility\BinaryCriteria.cs" />
     <Compile Include="utility\Condition.cs" />
     <Compile Include="utility\CriteriaExtensions.cs" />
     <Compile Include="utility\EnumerableExtensions.cs" />
+    <Compile Include="utility\FilteringExtensions.cs" />
     <Compile Include="utility\IMatchAn.cs" />
+    <Compile Include="utility\PropertyAccessor.cs" />
+    <Compile Include="utility\NegatingCriteria.cs" />
     <Compile Include="utility\OrCriteria.cs" />
+    <Compile Include="utility\Where.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
