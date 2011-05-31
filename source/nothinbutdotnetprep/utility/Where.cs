@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace nothinbutdotnetprep.utility
+﻿namespace nothinbutdotnetprep.utility
 {
-  public class Where<ItemToMatch>
+  public class Where<TItemToMatch>
   {
-    public static something has_a<PropertyType>(
-      PropertyAccessor<ItemToMatch, PropertyType> accessor)
+    public static CriteriaFactory<TItemToMatch, TPropertyType> has_a<TPropertyType>(
+      PropertyAccessor<TItemToMatch, TPropertyType> accessor)
     {
-      throw new NotImplementedException();
+      return new CriteriaFactory<TItemToMatch, TPropertyType>(accessor);
     }
   }
 }

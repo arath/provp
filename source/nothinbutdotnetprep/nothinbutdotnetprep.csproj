@@ -69,8 +69,10 @@
     <Compile Include="utility\BinaryCriteria.cs" />
     <Compile Include="utility\Condition.cs" />
     <Compile Include="utility\CriteriaExtensions.cs" />
+    <Compile Include="utility\CriteriaFactory.cs" />
     <Compile Include="utility\EnumerableExtensions.cs" />
     <Compile Include="utility\IMatchAn.cs" />
+    <Compile Include="utility\NeverMatchesAn.cs" />
     <Compile Include="utility\PropertyAccessor.cs" />
     <Compile Include="utility\NegatingCriteria.cs" />
     <Compile Include="utility\OrCriteria.cs" />

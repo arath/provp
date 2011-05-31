@@ -1,4 +1,4 @@
 ﻿namespace nothinbutdotnetprep.utility
 {
-  public delegate PropertyType PropertyAccessor<in ItemToTarget, out PropertyType>(ItemToTarget item);
+  public delegate TPropertyType PropertyAccessor<in TItemToTarget, out TPropertyType>(TItemToTarget item);
 }
