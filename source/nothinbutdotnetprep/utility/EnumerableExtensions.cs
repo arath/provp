@@ -8,5 +8,20 @@ namespace nothinbutdotnetprep.utility
     {
       foreach (var item in items) yield return item;
     }
+
+    public static IEnumerable<ItemToMatch> all_items_matching<ItemToMatch>(this IEnumerable<ItemToMatch> items,
+                                                       IMatchAn<ItemToMatch> criteria)
+    {
+      return items.all_items_matching(criteria.matches);
+    }
+
+    static IEnumerable<ItemToMatch> all_items_matching<ItemToMatch>(this IEnumerable<ItemToMatch> items,
+                                                       Condition<ItemToMatch> condition)
+    {
+      foreach (var item_to_match in items)
+      {
+        if (condition(item_to_match)) yield return item_to_match;
+      }
+    }
   }
 }
