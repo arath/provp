@@ -35,6 +35,8 @@ namespace nothinbutdotnetprep.utility.filtering
 
     public IMatchAn<TItemToMatch> greater_than(TPropertyType value)
     {
-      throw new NotImplementedException();
+      return new AnonymousMatch<TItemToMatch>(x => accessor(x).CompareTo(value) > 0);
+      //throw new NotImplementedException();
     }
+  }
   }
