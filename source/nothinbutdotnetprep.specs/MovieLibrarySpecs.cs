@@ -4,8 +4,8 @@ using System.Linq;
 using developwithpassion.specifications.extensions;
 using developwithpassion.specifications.moq;
 using Machine.Specifications;
-using nothinbutdotnetprep.specs.utility;
 using nothinbutdotnetprep.collections;
+using nothinbutdotnetprep.specs.utility;
 
 /* The following set of Context/Specification pairs are in place to specify the functionality that you need to complete for the MovieLibrary class.
  * MovieLibrary is an aggregate root for the Movie class. it exposes the ability to search,sort, and iterate over all of the movies that it aggregates.
@@ -81,7 +81,25 @@ namespace nothinbutdotnetprep.specs
       Because b = () =>
         number_of_movies = sut.all_movies().Count();
 
-      It should_return_the_number_of_all_movies_in_the_library = () => { number_of_movies.ShouldEqual(2); };
+      It should_return_the_number_of_all_movies_in_the_library = () =>
+        number_of_movies.ShouldEqual(2);
+    }
+    public class when_iterating : movie_library_concern
+    {
+      static IEnumerable<Movie> result;
+
+      Establish c = () =>
+        Enumerable.Range(1, 100).each(x => movie_collection.Add(new Movie()));
+
+
+      Because b = () =>
+        result = sut.all_movies();
+
+      It should_process_each_item = () =>
+      {
+        result.GetEnumerator().MoveNext();
+      };
+
     }
 
     [Subject(typeof(MovieLibrary))]
@@ -118,6 +136,8 @@ namespace nothinbutdotnetprep.specs
         first_movie = new Movie();
         second_movie = new Movie();
         movie_collection.add_all(first_movie, second_movie);
+
+
       };
 
       Because b = () =>
@@ -315,7 +335,10 @@ namespace nothinbutdotnetprep.specs
       protected static Movie the_ring;
       protected static Movie theres_something_about_mary;
 
-      Establish c = () => { populate_with_default_movie_set(movie_collection); };
+      Establish c = () =>
+      {
+        populate_with_default_movie_set(movie_collection);
+      };
 
       static void populate_with_default_movie_set(IList<Movie> movieList)
       {
