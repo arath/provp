@@ -70,7 +70,6 @@
     <Compile Include="utility\Condition.cs" />
     <Compile Include="utility\CriteriaExtensions.cs" />
     <Compile Include="utility\EnumerableExtensions.cs" />
-    <Compile Include="utility\FilteringExtensions.cs" />
     <Compile Include="utility\IMatchAn.cs" />
     <Compile Include="utility\PropertyAccessor.cs" />
     <Compile Include="utility\NegatingCriteria.cs" />

@@ -1,11 +1,13 @@
-﻿namespace nothinbutdotnetprep.utility
+﻿using System;
+
+namespace nothinbutdotnetprep.utility
 {
   public class Where<ItemToMatch>
   {
-    public static PropertyAccessor<ItemToMatch, PropertyType> has_a<PropertyType>(
+    public static something has_a<PropertyType>(
       PropertyAccessor<ItemToMatch, PropertyType> accessor)
     {
-      return accessor;
+      throw new NotImplementedException();
     }
   }
 }
