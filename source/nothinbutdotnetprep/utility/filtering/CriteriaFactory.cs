@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using nothinbutdotnetprep.collections;
+﻿using System.Collections.Generic;
 
-namespace nothinbutdotnetprep.utility
+namespace nothinbutdotnetprep.utility.filtering
 {
   public class CriteriaFactory<TItemToMatch, TPropertyType>
   {
@@ -21,12 +19,12 @@ namespace nothinbutdotnetprep.utility
     public IMatchAn<TItemToMatch> equal_to_any(params TPropertyType[] potential_values)
     {
       return new AnonymousMatch<TItemToMatch>(item_to_match => new List<TPropertyType>(potential_values)
-        .Contains(accessor(item_to_match));
+                                                .Contains(accessor(item_to_match)));
     }
 
     public IMatchAn<TItemToMatch> not_equal_to(TPropertyType value)
     {
-      throw new NotImplementedException();
+      return equal_to(value).not();
     }
   }
 }

@@ -1,5 +1,4 @@
 using System;
-using nothinbutdotnetprep.utility;
 
 namespace nothinbutdotnetprep.collections
 {
@@ -10,7 +9,6 @@ namespace nothinbutdotnetprep.collections
     public Genre genre { get; set; }
     public int rating { get; set; }
     public DateTime date_published { get; set; }
-
 
     public bool Equals(Movie other)
     {
@@ -32,21 +30,6 @@ namespace nothinbutdotnetprep.collections
     public override int GetHashCode()
     {
       return title.GetHashCode();
-    }
-
-    public static IMatchAn<Movie> is_in_genre(Genre genre)
-    {
-      return new IsInGenre(genre);
-    }
-
-    public static IMatchAn<Movie> is_published_by_pixar_or_disney()
-    {
-      return is_published_by(ProductionStudio.Pixar).or(is_published_by(ProductionStudio.Disney));
-    }
-
-    public static IMatchAn<Movie> is_published_by(ProductionStudio studio)
-    {
-      return new IsPublishedBy(studio);
     }
   }
 }
